@@ -51,4 +51,4 @@ def set_random_seed(seed: int) -> None:
 
 def collate_fn(batch: Iterable[PytreeType], axis=0) -> PytreeType:
     """Collate function for torch DataLoaders."""
-    return jax.tree_multimap(lambda *arrays: onp.stack(arrays, axis=axis), *batch)
+    return jax.tree_map(lambda *arrays: onp.stack(arrays, axis=axis), *batch)
