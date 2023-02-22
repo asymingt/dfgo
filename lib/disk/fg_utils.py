@@ -49,7 +49,7 @@ def assignments_from_trajectory(
         storage=jnp.concatenate(
             [trajectory_unnorm.position, trajectory_unnorm.velocity], axis=-1
         ).flatten(),
-        storage_metadata=jaxfg.core.StorageMetadata.make(
+        storage_layout=jaxfg.core.StorageLayout.make(
             variables=variables, local=False
         ),
     )

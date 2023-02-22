@@ -26,7 +26,7 @@ class ManifoldDefinition(Generic[ManifoldPoint]):
     def assert_validity(self, example: ManifoldPoint) -> None:
         def _assert_allclose(x: Any, y: Any, **kwargs):
             """"""
-            for a, b in zip(jax.tree_leaves(x), jax.tree_leaves(y)):
+            for a, b in zip(jax.tree_util.tree_leaves(x), jax.tree_util.tree_leaves(y)):
                 onp.testing.assert_allclose(a, b, **kwargs)
 
         _assert_allclose(

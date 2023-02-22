@@ -145,7 +145,7 @@ def assignments_from_trajectory(
     )
     return jaxfg.core.VariableAssignments(
         storage=stacked_storage.flatten(),
-        storage_metadata=jaxfg.core.StorageMetadata.make(
+        storage_layout=jaxfg.core.StorageLayout.make(
             graph.get_variables(),
             local=False,
         ),

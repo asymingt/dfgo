@@ -34,8 +34,8 @@ class _KittiStruct(jax_dataclasses.EnforcedAnnotationsMixin):
 
     # Annotated[..., ...] attaches an expected shape to each field. (which may end up
     # being prefixed by a shared set of batch axes)
-    image: Annotated[jnp.ndarray, (50, 150, 3), jnp.floating] = null_array
-    image_diff: Annotated[jnp.ndarray, (50, 150, 3), jnp.floating] = null_array
+    image: Annotated[jnp.ndarray, (50, 150, 3)] = null_array
+    image_diff: Annotated[jnp.ndarray, (50, 150, 3)] = null_array
     x: Annotated[jnp.ndarray, (), jnp.floating] = null_array
     y: Annotated[jnp.ndarray, (), jnp.floating] = null_array
     theta: Annotated[jnp.ndarray, (), jnp.floating] = null_array
